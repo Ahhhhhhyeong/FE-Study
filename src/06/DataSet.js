@@ -8,23 +8,22 @@ const rows = data.map((value) => value);
 
 const columns = [
     { field: 'no', headerName: 'NO', width: 80 },   
-    { field: 'sickCode', headerName: '질병코드', widht: 100 },
-    { field: 'sickName', headerName: '질병명', widht: 200 },
+    { field: 'sickCode', headerName: 'sickCode', widht: 100 },
+    { field: 'sickName', headerName: 'sickName'},
 ];
 
 
 
 function DataSet() {
     return (
-        <Box sc={{ height: 800, widht: '100%' }}>
+        <Box sc={{ widht: '100%' }}>
             <DataGrid 
                 rows={rows}
                 getRowId={(row) => row.no}
                 columns={columns}
-                pageSize={5}
-                rowsPerPageOption={[5]}
                 checkboxSelection
                 disableSelectionOnClick
+                autoHeight
             />
         </Box>
     );
